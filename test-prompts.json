@@ -1,0 +1,44 @@
+[
+  {
+    "id": "test-1-first-chapter",
+    "name": "首章建立 CSS 体系",
+    "prompt": "我是新连载的首章《灵田种药》，约 12k 字。主角是 1960 年代湘西山村的 12 岁少年陆尘。请按 serial-typesetting 规范输出三版本产物。",
+    "expect": "输出包含 HTML 公众号版 + 纯内联代码版 + 手机友好版。HTML 含完整 <style> 块；纯内联版无 class；手机版为 markdown。开头顺序为注释 5-7 行 → 封面 → 标题 → 副标题 → 题词 → 目录。配图按 5 元素清单生成。色板用凡途 1960 5 节统一色板。"
+  },
+  {
+    "id": "test-2-subsequent-chapter",
+    "name": "后续章节复用首章 CSS",
+    "prompt": "排版下一章《走出大山》，约 11 节，30k 字。严格复用首章 CSS 体系。",
+    "expect": "读取首章 HTML 的 <style> 块并完整复制，不自创任何新样式。6 项 grep 自检全过。配图位置按情节段嵌入，封面用 file_to_url 转云端 URL。"
+  },
+  {
+    "id": "test-3-grep-self-check",
+    "name": "6 项 grep 自检",
+    "prompt": "检查这个文件是否符合 v3.3 规范：附上交付的 HTML 路径。",
+    "expect": "前 6 项 grep 结果均为 0，第 7 项 <table 数量 > 10。公众号代码 .md 末尾无 grep 自检块。"
+  },
+  {
+    "id": "test-4-image-zero-text",
+    "name": "文字区零文字规则",
+    "prompt": "这一节有黑板、报纸、对联场景，帮我处理配图。",
+    "expect": "Prompt 中强调 100% 零文字 + 黑色条带 + 模糊线条代替。重做 2-3 次确保完全无乱码中文。"
+  },
+  {
+    "id": "test-5-notes-differentiation",
+    "name": "创作笔记差异化处理",
+    "prompt": "这一节是本章最后一节，含创作笔记（改进对照表 + 五维自评）。",
+    "expect": "公众号代码版用 HTML 注释包裹笔记；公众号版 HTML 保留灰色 <table> 块；手机友好版保留文末灰色引用块。"
+  },
+  {
+    "id": "test-6-richness-metrics",
+    "name": "丰富度硬指标",
+    "prompt": "我写完了一节《祠堂对峙》，请检查丰富度。",
+    "expect": "每节对话块 ≥ 1、关键短语高亮 ≥ 2、dinkus ≥ 1、卷首引线每 3 节 ≥ 1。不达标则补充。"
+  },
+  {
+    "id": "test-7-character-baseline",
+    "name": "凡途 1960 人物基线",
+    "prompt": "给陆尘和大黑各生成 1 张配图。",
+    "expect": "陆尘 prompt 含 15-18 岁 + 白色衬衫 + 蓝灰长裤 + 解放鞋 + 背土布书包 + 古玉青绿光晕。大黑 prompt 含「纯黑色中华田园犬·毛色黑得发亮·四肢粗短」。"
+  }
+]

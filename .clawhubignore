@@ -1,0 +1,10 @@
+# 忽略以下文件/目录
+# 临时文件
+*.tmp
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
+# 临时输出
+output/
+_archive/
