@@ -1,0 +1,22 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\Classes\Directory\Background\shell\PowerShellHere]
+@="Open PowerShell Here"
+"Icon"="C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+
+[HKEY_CURRENT_USER\Software\Classes\Directory\Background\shell\PowerShellHere\command]
+@="powershell -NoExit -ExecutionPolicy Bypass -File \"C:\\Users\\y z m i n g\\Open-PowerShell-Here.ps1\" -Path \"%V\""
+
+[HKEY_CURRENT_USER\Software\Classes\Directory\shell\PowerShellHere]
+@="Open PowerShell Here"
+"Icon"="C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+
+[HKEY_CURRENT_USER\Software\Classes\Directory\shell\PowerShellHere\command]
+@="powershell -NoExit -ExecutionPolicy Bypass -File \"C:\\Users\\y z m i n g\\Open-PowerShell-Here.ps1\" -Path \"%1\""
+
+[HKEY_CURRENT_USER\Software\Classes\Drive\shell\PowerShellHere]
+@="Open PowerShell Here"
+"Icon"="C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+
+[HKEY_CURRENT_USER\Software\Classes\Drive\shell\PowerShellHere\command]
+@="powershell -NoExit -ExecutionPolicy Bypass -File \"C:\\Users\\y z m i n g\\Open-PowerShell-Here.ps1\" -Path \"%1\""
